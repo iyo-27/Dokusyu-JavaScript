@@ -1,15 +1,7 @@
 <script>
-    let obj = {
-        prop: true,
-        subObj: {val: 100},
-        greeting(){console.log("こんにちは")}
-    };
-
-    console.log(obj["prop"]);
-    console.log(obj["subObj"]["val"]);
-
-    obj["greeting"]();
-
-    obj.subObj = {val2: 1000}; // ドット記法ならこっちも可　obj.subObj.val2 = 1000;
-    console.log(obj.subObj.val2);
+    console.log(1 * true);
+    console.log(false + true);
+    console.log(Boolean(0));
+    console.log(Boolean(1));
+    console.log(Boolean(-1));
 </script>
