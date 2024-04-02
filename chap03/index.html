@@ -1,10 +1,16 @@
 <script>
-    const members = {
-        member1: "太郎",
-        member2: "次郎"
-    }
+    let person = {
+        hello: function() {
+            console.log("こんにちは")
+        }
+    };
 
-    const keyBase = "member";
-    console.log(members[keyBase + "1"])
-    console.log(members[keyBase + "2"])
+    person.hello();
+    
+    person.bye = function(){console.log("さようなら")}
+    person.bye();
+
+    person.hello = function(){console.log("Hello")}
+    person.hello();
+    
 </script>
