@@ -1,15 +1,10 @@
 <script>
-    let person = {
-        name: {first: "太郎", last: "独習"},
-        age: 18
-    };
-    console.log(person["age"]);
-    console.log(person["name"]["last"]);
+    const members = {
+        member1: "太郎",
+        member2: "次郎"
+    }
 
-    person["name"]["last"] = "次郎";
-    person["gender"] = "男性"
-    person["family"] = {wife: "花子", child: "三郎"}
-    
-    console.log(person["family"]["wife"]);
-    console.log(person);
+    const keyBase = "member";
+    console.log(members[keyBase + "1"])
+    console.log(members[keyBase + "2"])
 </script>
