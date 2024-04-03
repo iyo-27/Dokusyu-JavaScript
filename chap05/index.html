@@ -1,10 +1,20 @@
 <script>
-    let fruit = "りんご";
+    let turthy = "truthyな値です";
 
-    if(fruit === "ばなな"){
-        console.log("ばななが見つかりました");
+    if(turthy){
+        console.log("条件式に渡されたのはtruthy");
     }else{
-        console.log("ばなな以外が見つかりました")
+        console.log("条件式に渡されたのはfalsy");
     }
+
+    // null や undefinedでないことの確認
+    const falsyVal = 0;
+
+    if(falsyVal !== null && falsyVal !== undefined){
+        console.log("null, undefined以外の値です")
+    }else{
+        console.log("null または undefinedです")
+    }
+        
 </script>
 
