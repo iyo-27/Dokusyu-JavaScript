@@ -1,20 +1,19 @@
 <script>
-    let turthy = "truthyな値です";
+    let val;
 
-    if(turthy){
-        console.log("条件式に渡されたのはtruthy");
-    }else{
-        console.log("条件式に渡されたのはfalsy");
-    }
+    // 回答例1
+    if(!val) val = "Hello";
+    console.log(val);
 
-    // null や undefinedでないことの確認
-    const falsyVal = 0;
+    // 回答例2
+    // val = val || "Hello";
 
-    if(falsyVal !== null && falsyVal !== undefined){
-        console.log("null, undefined以外の値です")
-    }else{
-        console.log("null または undefinedです")
-    }
-        
+    // 回答例1
+    val = null;
+    if (val === null || val === undefined)  val = "hello";
+    console.log(val);
+
+    // 回答例2
+    // val = val ?? "hello"
 </script>
 
