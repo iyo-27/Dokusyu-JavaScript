@@ -1,16 +1,20 @@
 <script>
-    const whichCase = "case1";
-
-    // breakを付けないと、他のケースも実行されてしまうので気を付けよう
-    switch (whichCase) {
-        case "case1" :
-            console.log("case1を実行しました");
+    let animal = "ゾウ";
+    
+    switch (animal) {
+        case "ゾウ":
+            console.log("ゾウ")
+    
+        case "ウマ":
+            console.log("ウマ")
+    
+        case "ウサギ":
+            console.log("ウサギ")
             break;
-        case "case2" :
-            console.log("case2を実行しました");
-            break;
+    
         default:
-            console.log("Defaultを実行しました");
+            console.log("何かわかりません")
+            break;
     }
 </script>
 
