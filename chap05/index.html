@@ -1,12 +1,17 @@
 <script>
     try {
-        const num = "3";
-        if(typeof num !== "number"){
-            throw "numは数値型でなければいけません"
-        }
-        console.log(`${num} × 5 = ${num} *5`);
+        // 数値に対して文字列のメソッドであるtoUpperCaseを呼んだ場合
+        const num = 1;
+        //num.toUpperCase();
+
+        // 存在しない変数val2を参照した場合
+        let val1 = val2 + 1;
     } catch(e) {
-        console.error(e)
+        if(e instanceof TypeError){
+            console.error("TypeErrorが発生した時の処理")
+        }else if(e instanceof ReferenceError){
+            console.error("ReferenceErrorが発生した時の処理")
+        }
     }
 </script>
 
