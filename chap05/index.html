@@ -1,11 +1,10 @@
 <script>
-    const array = [10, 20, 23, 47];
-    let sumNum = 0;
-
-    for(i=0; i<array.length; i++){
-        sumNum += array[i];
+    const fruits = {
+        apple:"りんご", banana:"バナナ", orange:"オレンジ"
     }
 
-    console.log(sumNum);
+    for (const key in fruits) {
+        console.log(`キー：${key}, 値：${fruits[key]}`);
+    }
 </script>
 
