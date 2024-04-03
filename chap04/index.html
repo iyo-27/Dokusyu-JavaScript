@@ -1,15 +1,16 @@
 <script>
-    // 変数にnullを格納
-    let val = null;
+    const person = {
+        name: "独習太郎",
+        age: 28,
+        parents: {
+            mother: "Sara",
+            father: "John"
+        }
+    };
 
-    // 右辺のvalはnullのため初期値がvalに設定される。
-    val = val ?? "初期値";
-    console.log(`val [${val}]`);
-
-    // null, undined 以外の場合は左のオペランドを返す
-    let num = 0
-    num = num ?? 10;
-    console.log(`num [${num}]`);
-
+    console.log(person.name);
+    console.log(person.siblings);
+    console.log(person.siblings?.length);
+    console.log(person.siblings.length);
 </script>
 
