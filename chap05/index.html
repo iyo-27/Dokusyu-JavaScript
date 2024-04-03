@@ -1,17 +1,13 @@
 <script>
     try {
-        // 数値に対して文字列のメソッドであるtoUpperCaseを呼んだ場合
-        const num = 1;
-        //num.toUpperCase();
+        let greeting = 0;
 
-        // 存在しない変数val2を参照した場合
-        let val1 = val2 + 1;
-    } catch(e) {
-        if(e instanceof TypeError){
-            console.error("TypeErrorが発生した時の処理")
-        }else if(e instanceof ReferenceError){
-            console.error("ReferenceErrorが発生した時の処理")
+        if (typeof greeting !== "string") {
+            throw "不正なデータ型です"
         }
+        console.log(`${greeting}、いい天気ですね`)
+    } catch(e) {
+            console.error(e)
     }
 </script>
 
