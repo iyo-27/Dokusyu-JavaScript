@@ -1,15 +1,11 @@
 <script>
     try {
-        nonExistingFunction();
-        console.log("上の例外により、これは実行されません");
+        let b = 10 + a;
+        console.log(b)
     } catch(e) {
-        console.error("nonExistingFunctionは存在しないため、例外が発生しました");
-        console.error("エラータイプ：" + e.name);
-        console.error("エラーメッセージ：" + e.message);
+        console.error(e)
     } finally {
-        console.log("後処理の記述が必要な場合はここに記述します")
+        console.log("後続の処理")
     }
-
-    console.log("例外が発生しても後続のコードが実行されます")
 </script>
 
