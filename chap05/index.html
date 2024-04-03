@@ -1,19 +1,16 @@
 <script>
-    let val;
+    const whichCase = "case1";
 
-    // 回答例1
-    if(!val) val = "Hello";
-    console.log(val);
-
-    // 回答例2
-    // val = val || "Hello";
-
-    // 回答例1
-    val = null;
-    if (val === null || val === undefined)  val = "hello";
-    console.log(val);
-
-    // 回答例2
-    // val = val ?? "hello"
+    // breakを付けないと、他のケースも実行されてしまうので気を付けよう
+    switch (whichCase) {
+        case "case1" :
+            console.log("case1を実行しました");
+            break;
+        case "case2" :
+            console.log("case2を実行しました");
+            break;
+        default:
+            console.log("Defaultを実行しました");
+    }
 </script>
 
