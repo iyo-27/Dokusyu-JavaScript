@@ -1,17 +1,11 @@
 <script>
-    // 空の関数定義
-    function fn() {}
-    
-    fn.fullName = "独習太郎";
-
-    fn.hello = function(){
-        console.log("こんにちは独習太郎");
+    function hello(name){
+        console.log(`こんにちは${name}`);
     }
 
-    // プロパティの取得
-    console.log(fn.fullName);
+    const obj = hello;
+    obj("独習太郎");
 
-    // メソッドの実行
-    fn.hello();
+    console.log(typeof obj);
 </script>
 
