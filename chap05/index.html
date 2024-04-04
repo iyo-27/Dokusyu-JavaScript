@@ -1,9 +1,22 @@
 <script>
-    // 関数addをFunctionコンストラクタから作成
-    const add = new Function("val1", "val2", "return val1 + val2;");
+    function hello(greeting = "こんにちは", person="独習太郎"){
+        console.log(greeting + person);
+    }
 
-    // 関数（add）の実行
-    const result = add(1, 2);
-    console.log(result);
+    // 引数を渡した場合
+    hello("おはよう", "ジョン");
+
+    // 引数を一つ渡した場合
+    hello("こんばんは");
+
+    // 引数にundefinedを渡した場合
+    hello(undefined, undefined);
+
+    // 引数にnullを渡した場合
+    // →nullは 0 + 0に変換される
+    hello(null, null);
+
+    // 引数を省略した場合
+    hello();
 </script>
 
