@@ -1,18 +1,13 @@
 <script>
-
-    function chance() {
-        let rand = Math.random();
-        let result;
-
-        if(rand < .5){
-            result = "成功"
-        } else {
-            result = "失敗"
+    function factory(greeting) {
+        function innerFn(name) {
+            console.log(greeting + " " + name);
         }
-
-        return result;
+        return innerFn;
     }
 
-    console.log(chance());
+    const hello = factory("こんにちは");
+    hello("太郎");
+    
 </script>
 
