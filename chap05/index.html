@@ -1,16 +1,15 @@
 <script>
-    // 無名関数をコールバック関数として使用
-    setTimeout(function(){
-        console.log("こんにちは");
-    }, 3000);
+    // [1]
+    const hello = function(){ console.log("こんにちは"); }
 
-    // 無名関数をコールバック関数以外に使用するケース
-    const fn = function(){}
+    // [2]
+    console.log(hello.toString());
 
-    // オブジェクトのプロパティに無名関数を設定
-    const obj = {
-        method: function(){}
-    }
-    console.log(obj.method)
+    // [3]
+    setTimeout(hello, 3000);
+
+    // [4]
+    setTimeout(function(){ console.log("こんにちは"); }, 3000);
+
 </script>
 
