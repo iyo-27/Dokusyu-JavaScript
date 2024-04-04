@@ -1,15 +1,17 @@
 <script>
     console.log("以下[1]")
-    function mpArgumentFunc(){
-        console.log("引数がない関数です");
+    function hello(){
+         return "Hello World";
     }
-    mpArgumentFunc();
+    console.log(hello());
 
     console.log("以下[2]")
-    function multiply(val1, val2){
-        return val1 * val2
+    function hello(personName){
+        return (typeof personName === "string") ? 
+            `こんにちは、${personName}` : "引数に文字列を渡してください"
     }
-    console.log(multiply(2, 3));
-    console.log(multiply(15, 2, 10));
+
+    console.log(hello("太郎"))
+    console.log(hello(1))
 </script>
 
