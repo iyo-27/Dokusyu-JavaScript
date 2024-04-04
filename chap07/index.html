@@ -1,15 +1,12 @@
 <script>
-    var globalVal = "グローバル変数";
-    function globalFn() {return "グローバル関数"}
+    (function fnA() {
+        /*即時関数fnAのスコープ*/
+        const val = "即時関数外からは参照不可"
+    })
 
-    function callGlobals() {
-        console.log(globalVal, globalFn())
-    }
-
-    //callGlobals();
-</script>
-
-<script>
-    callGlobals();
+    (function fnB() {
+        /*即時関数*fnBのスコープ*/
+        console.log(val); // エラーが発生
+    })
 </script>
 
