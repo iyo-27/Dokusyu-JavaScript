@@ -1,17 +1,32 @@
 <script>
-    const str = ["a", "b", "c"];
-    const num = [10, 20, 30];
+    console.log("以下[1]")
+    for (let i=5; i < 10; i++) {
+        console.log(i)
+    }
 
-    alphabet:
-    for(let i=0; i < str.length; i++){
-        numeric:
-        for(let j=0; j < num.length; j++){
-            console.log(`アルファベット：[${str[i]}]`, `数値：[${num[j]}]`);
-
-            if(str[i] === "b" && num[j] === 30) {
-                break alphabet;
-            }
+    console.log("以下[2]")
+    for (let i=1; i <= 100; i++) {
+        if(i % 15 === 0){
+            console.log("Fizz Buzz")
+        } else if (i % 3 === 0) {
+            console.log("Fizz ")
+        } else if (i % 5 === 0) {
+            console.log("Buzz")
+        } else {
+            console.log(i)
         }
+    }
+
+    console.log("以下[4]")
+    const capitals = {
+        日本: "東京",
+        アメリカ: "ワシントン",
+        イギリス: "ロンドン"
+    };
+
+    const entries = Object.entries(capitals);
+    for (const [key, value] of entries) {
+        console.log(`${key}の首都は${value}です。`)
     }
 </script>
 
