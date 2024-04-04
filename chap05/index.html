@@ -1,22 +1,9 @@
 <script>
-    function hello(greeting = "こんにちは", person="独習太郎"){
-        console.log(greeting + person);
+    function calcAreaOfCircle(radius, pi=3){
+        console.log(pi * radius ** 2);
     }
 
-    // 引数を渡した場合
-    hello("おはよう", "ジョン");
-
-    // 引数を一つ渡した場合
-    hello("こんばんは");
-
-    // 引数にundefinedを渡した場合
-    hello(undefined, undefined);
-
-    // 引数にnullを渡した場合
-    // →nullは 0 + 0に変換される
-    hello(null, null);
-
-    // 引数を省略した場合
-    hello();
+    calcAreaOfCircle(10, 3.14);
+    calcAreaOfCircle(10);
 </script>
 
