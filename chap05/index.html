@@ -1,23 +1,10 @@
 <script>
-    const obj = {
-        prop1: 10,
-        prop2: "文字列",
-        prop3: 20,
-        skip: 20,
-        prop4: true,
-        prop5: 23,
-        prop6: 47,
-    };
+    const breakTestArray = ["ぬけない", "not break", "break", "この前で抜ける"]
 
-    let sum = 0;
-
-    const keys = Object.keys(obj);
-    for (const key of keys) {
-        if(key !== "skip" && typeof obj[key] === "number"){
-            sum += obj[key];
-        }
+    for(const value of breakTestArray){
+        console.log(value);
+        
+        if(value === "break") break;
     }
-
-    console.log(sum);
 </script>
 
