@@ -1,18 +1,8 @@
 <script>
-    function saySomething(callback) {
-        const result = callback();
-        console.log(`${result}、独習太郎`);
-    }
-
     function hello() {
-        return "こんにちは";
+        console.log("こんにちは");
     }
 
-    function bye() {
-        return "さようなら";
-    }
-
-    saySomething(hello);
-    saySomething(bye);
+    setTimeout(hello, 5000);
 </script>
 
