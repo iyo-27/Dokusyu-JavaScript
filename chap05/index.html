@@ -1,15 +1,10 @@
 <script>
-    // [1]
-    const hello = function(){ console.log("こんにちは"); }
+    // 無名関数
+    setTimeout(function(){
+        console.log("こんにちは")
+    }, 3000);
 
-    // [2]
-    console.log(hello.toString());
-
-    // [3]
-    setTimeout(hello, 3000);
-
-    // [4]
-    setTimeout(function(){ console.log("こんにちは"); }, 3000);
-
+    // アロー関数
+    setTimeout(() => console.log("こんばんは"), 5000);
 </script>
 
