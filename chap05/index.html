@@ -1,16 +1,9 @@
 <script>
-    console.log("以下[1]")
-    hello();
+    // 関数addをFunctionコンストラクタから作成
+    const add = new Function("val1", "val2", "return val1 + val2;");
 
-    function hello(){
-        console.log("Hello")
-    }
-
-    console.log("以下[2]")
-    sampleFunc();
-
-    const sampleFunc = function(){
-        // 関数式の場合、定義より前で呼び出すことはできない
-    }
+    // 関数（add）の実行
+    const result = add(1, 2);
+    console.log(result);
 </script>
 
