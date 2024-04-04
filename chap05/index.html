@@ -1,11 +1,10 @@
 <script>
-    const array = [10, "文字列", 20, true, 23, 47];
-    let sum = 0;
+    const fruits = {apple: "りんご", banana: "バナナ"};
+    const props = Object.keys(fruits);
+    console.log(props);
 
-    for(const value of array){
-        if(typeof value === "number") sum += value;
+    for (const prop of props){
+        console.log(prop, fruits[prop]);
     }
-    
-    console.log(sum);
 </script>
 
