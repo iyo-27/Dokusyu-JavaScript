@@ -1,13 +1,36 @@
 <script>
-    // [1]
-    const hello = () => console.log("こんにちは");
-    hello();
+    console.log("以下[4]-1");
+    setTimeout(function(name) {console.log(`こんにちは、${name}`)}, 2000, "独習太郎");
 
-    // [2]
-    const double = num => num * 2;
-    console.log(double(10));
+    console.log("以下[4]-2");
+    setTimeout(name => console.log(`こんにちは、${name}`), 2000, "独習太郎");
 
-    // [3]
-    setTimeout(name => console.log(`こんにちは、` + name), 3000, "独習太郎");
+    console.log("以下[4]-3");
+    function add(val1, val2){return val1 + val2}
+    function minus(val1, val2){return val1 - val2}
+
+    function calcAndDisp(calcFunc, dispFunc, i, j){
+        let result = calcFunc(i, j);
+        dispFunc(result);
+    }
+
+    calcAndDisp(add, console.log, 3, 2);
+    calcAndDisp(minus, alert, 3, 2);
+
+
+    // [5]-1
+    const fn1 = (num1, num2) => num1 + num2;
+    // [5]-2
+    const fn2 = num => num1 * 2;
+    // [5]-3
+    const fn3 = () => console.log("Hello World");
+    // [5]-2
+    const fn4 = name => {
+        console.log("Hello World");
+        console.log(`Hello ${name}`);
+    }
+    // [5]-2
+    const fn5 = num => ({name: "独習太郎"});
+
 </script>
 
