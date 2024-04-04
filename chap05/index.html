@@ -1,13 +1,16 @@
 <script>
-    function plus (a, b) { return a + b }
-    function minus (a, b) { return a - b }
+    // 無名関数をコールバック関数として使用
+    setTimeout(function(){
+        console.log("こんにちは");
+    }, 3000);
 
-    function calc(val1, val2, callback){
-        console.log(callback(val1, val2));
+    // 無名関数をコールバック関数以外に使用するケース
+    const fn = function(){}
+
+    // オブジェクトのプロパティに無名関数を設定
+    const obj = {
+        method: function(){}
     }
-
-    calc(1, 2, plus);
-    calc(10, 2, plus);
-    calc(10, 2, minus);
+    console.log(obj.method)
 </script>
 
