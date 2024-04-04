@@ -1,21 +1,17 @@
 <script>
-    // 関数内でプロパティーの値を変更した場合
-    const obj = {val: 1}
-    function fn(obj2){
-        obj2.val = 2;
-    }
+    // 空の関数定義
+    function fn() {}
     
-    fn(obj);
-    console.log(obj.val)
+    fn.fullName = "独習太郎";
 
-    // 一方、関数内で別のオブジェクトを変数に設定
-    const hoge = {val: 1};
-
-    function moge(hoge2){
-        hoge2 = {val: 2}
+    fn.hello = function(){
+        console.log("こんにちは独習太郎");
     }
 
-    moge(hoge);
-    console.log(hoge.val)
+    // プロパティの取得
+    console.log(fn.fullName);
+
+    // メソッドの実行
+    fn.hello();
 </script>
 
