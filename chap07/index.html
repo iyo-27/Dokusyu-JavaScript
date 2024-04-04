@@ -1,20 +1,15 @@
 <script>
-    if(true){
-        /*ブロックスコープ開始*/
-        let letVal = "letで宣言";
-        const constFn = function(){console.log("constで宣言")}
-        var varVal = "varで宣言"
-        function fnStmt() {console.log("関数宣言")}
-        /*ブロックスコープ終了*/
+    var globalVal = "グローバル変数";
+    function globalFn() {return "グローバル関数"}
+
+    function callGlobals() {
+        console.log(globalVal, globalFn())
     }
 
-    // 以下別のブロックスコープが生成される
-    if(true){
-        console.log(varVal);
-        fnStmt();
-        console.log(letVal); // エラー
-        constFn(); // エラー
-    }
+    //callGlobals();
+</script>
 
+<script>
+    callGlobals();
 </script>
 
