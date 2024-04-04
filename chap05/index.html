@@ -1,17 +1,9 @@
 <script>
-    console.log("以下[1]")
-    function hello(){
-         return "Hello World";
-    }
-    console.log(hello());
-
-    console.log("以下[2]")
-    function hello(personName){
-        return (typeof personName === "string") ? 
-            `こんにちは、${personName}` : "引数に文字列を渡してください"
+    const minus = function(val1, val2){
+        return val1 - val2
     }
 
-    console.log(hello("太郎"))
-    console.log(hello(1))
+    let result = minus(10, 5);
+    console.log(result);
 </script>
 
