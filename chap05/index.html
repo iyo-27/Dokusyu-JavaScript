@@ -1,9 +1,15 @@
 <script>
+    console.log("以下[1]")
+    function mpArgumentFunc(){
+        console.log("引数がない関数です");
+    }
+    mpArgumentFunc();
+
+    console.log("以下[2]")
     function multiply(val1, val2){
         return val1 * val2
     }
-
-    console.log(multiply(7, 9));
-    console.log(multiply(-11, 9));
+    console.log(multiply(2, 3));
+    console.log(multiply(15, 2, 10));
 </script>
 
