@@ -1,13 +1,21 @@
 <script>
-    function fn(obj) {
-        obj.arg1 ??= "初期値1";
-        obj.arg2 ??= "初期値2";
+    // 関数内でプロパティーの値を変更した場合
+    const obj = {val: 1}
+    function fn(obj2){
+        obj2.val = 2;
+    }
+    
+    fn(obj);
+    console.log(obj.val)
 
-        // オブジェクトの特性で存在しないプロパティはundefined
-        console.log(obj.arg1, obj.arg2, obj.test2)
+    // 一方、関数内で別のオブジェクトを変数に設定
+    const hoge = {val: 1};
+
+    function moge(hoge2){
+        hoge2 = {val: 2}
     }
 
-    const params = {arg2: "引数2", test:"テスト"};
-    fn(params);
+    moge(hoge);
+    console.log(hoge.val)
 </script>
 
