@@ -1,9 +1,13 @@
 <script>
-    function calcAreaOfCircle(radius, pi=3){
-        console.log(pi * radius ** 2);
+    function fn(obj) {
+        obj.arg1 ??= "初期値1";
+        obj.arg2 ??= "初期値2";
+
+        // オブジェクトの特性で存在しないプロパティはundefined
+        console.log(obj.arg1, obj.arg2, obj.test2)
     }
 
-    calcAreaOfCircle(10, 3.14);
-    calcAreaOfCircle(10);
+    const params = {arg2: "引数2", test:"テスト"};
+    fn(params);
 </script>
 
