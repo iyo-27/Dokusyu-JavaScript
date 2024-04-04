@@ -1,12 +1,21 @@
 <script>
-    (function fnA() {
-        /*即時関数fnAのスコープ*/
-        const val = "即時関数外からは参照不可"
-    })
+    let scriptVal = "スクリプトスコープの変数";
 
-    (function fnB() {
-        /*即時関数*fnBのスコープ*/
-        console.log(val); // エラーが発生
-    })
+    function fn() {
+        let fnVal = "関数スコープの変数";
+        if(true){
+            console.log(scriptVal, fnVal);
+            console.log(scriptFn());
+            console.log(sVal, test); // エラー
+        }
+
+    }
+
+    function scriptFn() {
+        let sVal = "scriptFnの変数";
+        return "scriptFnの実行結果"
+    }
+
+    fn();
 </script>
 
