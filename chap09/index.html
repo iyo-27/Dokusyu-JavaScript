@@ -1,13 +1,25 @@
 <script>
-    class TestCls {
-        constructor(arg) {
-            this.prop = arg;
+    class User {
+        constructor(username, password) {
+            this.username = username,
+            this.password = password
+        }
+
+        login() {
+            console.log(`ログイン[${this.username} /${this.password}]`);
+        }
+
+        changePassword(pwd) {
+            this.password = pwd;
+            console.log(`パスワードが[${this.password}]に変更されました`);
         }
     }
 
-    const obj = new TestCls("引数");
-    console.log(obj.prop);
+    // インスタンス化
+    const taro = new User("独習太郎", "taro-pwd");
+    // taro.username = "花子"; 確認のためのソース。やっぱり変更できちゃうんだね
+    taro.changePassword("new-pwd");
 
-    obj.prop = "値の変更";
-    console.log(obj.prop);
+    taro.login();
+
 </script>
