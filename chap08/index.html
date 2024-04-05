@@ -8,8 +8,6 @@
         }
     }
 
-    // 2秒後に"こんにちは、太郎"とコンソールに表示させる
-    setTimeout(taro.hello.bind(taro), 2000);
-    // 4秒後に"こんにちは、花子"とコンソールに表示させる
-    setTimeout(taro.hello, 4000);
+    // 無名関数でtaro.hello()を囲む
+    setTimeout(function(){taro.hello()}, 2000);
 </script>
