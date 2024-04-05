@@ -1,13 +1,9 @@
 <script>
-    window.name = "花子";
+    const taro = {name: "太郎"}
 
-    const taro = {
-        name: "太郎",
-        hello: function() {
-            console.log("こんにちは" + this.name);
-        }
+    function hello(greeting) {
+        console.log(`${greeting}、${this.name}`)
     }
 
-    // 無名関数でtaro.hello()を囲む
-    setTimeout(function(){taro.hello()}, 2000);
+    hello.call(taro, "こんにちは")
 </script>
