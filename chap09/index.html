@@ -1,33 +1,22 @@
 <script>
-    class User {
-        constructor(username, password, roll) {
-            this.username = username,
-            this.password = password,
-            this.roll = roll
+    class Human {
+        static TYPE = "普通の人";
+
+        static staticMove() {
+            console.log(Human.TYPE + "は歩いて移動します");
         }
 
-        login() {
-            this.check();
-            console.log(`ログイン[${this.username} /${this.password}]`);
+        constructor(name) {
+            this.name = name
         }
 
-        check() {
-            console.log("ログイン情報をチェックします")
-        }
-
-        checkRoll() {
-            if(this.roll === "admin") {
-                console.log("管理者権限です");
-            } else {
-                console.log("一般ユーザーです");
-            }
+        move() {
+            console.log(this.name + "は歩いて移動します")
         }
     }
 
-    // インスタンス化
-    const taro = new User("独習太郎", "taro-pwd", "peple");
-
-    taro.login();
-    taro.checkRoll();
-
+    const taro = new Human("太郎");
+    Human.staticMove();
+    console.log(Human.TYPE);
+    taro.move();
 </script>
