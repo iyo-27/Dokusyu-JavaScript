@@ -13,8 +13,31 @@
         print() {
             this.constructor.print(this.arg)
         }
+
+        set gender(value) {
+            try {
+                if (value === "男" || value === "女" || value === "トランスジェンダー") {
+                    this._gender = value;
+                } else {
+                    throw 'genderプロパティには"男"、"女"、または"トランスジェンダー"を設定してください'
+                    // throw new Error('genderプロパティには"男"、"女"、または"トランスジェンダー"を設定してください') でエラーを飛ばすのもあり！！
+                }
+            } catch(e) {
+                console.error(e);
+            }
+        }
+
+        get gender() {
+            return this._gender
+        }
     }
 
     const std = new StdClass("こんにちは");
     std.print();
+
+    std.gender = "男";
+    console.log(std.gender);
+    console.log(std);
+    
+    std.gender = "不明";
 </script>
