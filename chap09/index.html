@@ -1,43 +1,32 @@
 <script>
-    class StdClass {
-        constructor (arg) {
-            this.arg = arg
+    class Parent {
+        constructor(value) {
+            this.parentProp = value;
         }
 
-        static printFn = console.log;
-
-        static print(arg) {
-            StdClass.printFn(arg)
-        }
-
-        print() {
-            this.constructor.print(this.arg)
-        }
-
-        set gender(value) {
-            try {
-                if (value === "男" || value === "女" || value === "トランスジェンダー") {
-                    this._gender = value;
-                } else {
-                    throw 'genderプロパティには"男"、"女"、または"トランスジェンダー"を設定してください'
-                    // throw new Error('genderプロパティには"男"、"女"、または"トランスジェンダー"を設定してください') でエラーを飛ばすのもあり！！
-                }
-            } catch(e) {
-                console.error(e);
-            }
-        }
-
-        get gender() {
-            return this._gender
+        parentMethod() {
+            console.log("親クラスのメソッド");
         }
     }
 
-    const std = new StdClass("こんにちは");
-    std.print();
+    // 継承先クラス（子クラス）
+    class Child extends Parent { // extendsでParentクラスを継承
+        constructor(parentProp, childProp) {
+            super(parentProp); // 親クラスのコンストラクタを実行
+            this.childProp = childProp; // 子クラス独自のプロパティを追加
+        }
+        
+        // 子クラスの独自メソッド追加
+        childMethod() {
+            // 親クラスのプロパティを取得
+            console.log(`子から親にアクセス[${this.parentProp}]`);
 
-    std.gender = "男";
-    console.log(std.gender);
-    console.log(std);
-    
-    std.gender = "不明";
+        }
+    }
+
+    // 子クラスからインスタンス化
+    const childObject = new Child("親", "子");
+    console.log(childObject);
+    childObject.parentMethod();
+    childObject.childMethod();
 </script>
