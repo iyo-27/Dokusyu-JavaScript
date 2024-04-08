@@ -1,14 +1,6 @@
 <script>
-    let chuka = ["八宝菜", "餃子", "回鍋肉", "青椒肉絲"];
-
-    chuka.push("天津飯");
-    chuka.unshift("チャーハン");
-    chuka.shift();
-    chuka.pop();
-    chuka.splice(2, 1);
-    console.log(chuka.indexOf("餃子"));
-    chuka = chuka.slice(1, 3);
-    let concatChuka = chuka.concat(["杏仁豆腐", "ごま豆腐"]);
-    concatChuka.reverse();
-    console.log(concatChuka.includes("八宝菜"));
+    const arry = [1, 2, 3, 4, 5];
+    arry.forEach(function(value, index, arry){
+        console.log(value, index, arry);
+    });
 </script>
