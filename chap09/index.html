@@ -1,8 +1,16 @@
 <script>
-    function Test(){}
-    Test.prototype.hello = function() { console.log("こんにちは"); }
+    class Test{
+        hello() { console.log("こんにちは"); }
+    }
+    
     const instance = new Test;
 
-    console.log(instance.__proto__.hello === Test.hello);
+    Test.prototype.hello();
+    instance.__proto__.hello();
+    instance.hello();
+
+    // クラスのメソッドをprototypeから変更
+    Test.prototype.hello = function () {console.log("Hello");}
+    
     instance.hello();
 </script>
