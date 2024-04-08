@@ -1,14 +1,30 @@
 <script>
-    const array2D = [
-        ["太郎", "25歳", "男"],
-        {name: "花子", age: "23歳", gender: "女"} // オブジェクトも格納できる
-    ]
+    const fruits = ["banana", "orange", "grape"];
+    // 末尾に要素を追加
+    console.log(fruits.push("apple"));
 
-    console.log(array2D[0]);
-    // [1階層目][2階層目]
-    console.log(array2D[0][0]);
-    console.log(array2D[0][2]);
-    console.log(array2D[1].name); // ドット記法でプロパティを取得
-    console.log(array2D[1]["age"]); // ブラケット記法でプロパティを取得
+    // 先頭に要素を追加
+    console.log(fruits.unshift("lemon"));
 
+    // 先頭の要素を削除
+    console.log(fruits.shift());
+
+    // 末尾の要素を削除
+    console.log(fruits.pop());
+
+    // 開始位置から特定の長さの要素を取り出し
+    // これは元の配列から削除されるため注意
+    console.log(fruits.splice(0, 2));
+
+    // 配列の結合
+    // 引数空で使用すれば、配列の複製もできる
+    const newFruits = fruits.concat(["meron", "mango"])
+    console.log(newFruits);
+    console.log(fruits); // 元の配列は変更されない
+    
+    // 特定の要素を抽出した新しい配列の作成
+    // 開始位置、終了位置を指定しなければすべて複製する
+    const newFruits2 = newFruits.slice(0, 2);
+    console.log(newFruits2);
+    console.log(newFruits);
 </script>
