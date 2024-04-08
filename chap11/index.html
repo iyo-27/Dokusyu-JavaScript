@@ -1,20 +1,14 @@
 <script>
-    // join 配列内の要素を結合して文字列を返却
-    const arry = ["Hello", "World"];
-    console.log(arry.join(" "));
+    let chuka = ["八宝菜", "餃子", "回鍋肉", "青椒肉絲"];
 
-    // fill 要素を特定の値で埋める
-    const arry1 = (new Array(10)).fill(0);
-    console.log(arry1);
-
-    // flat 多次元配列を平坦化する
-    const arry3D = [1, [2], 3, [4, [5]]];
-    const arry2D = arry3D.flat(); // 引数なしor1で1次元分平坦化を行う
-    console.log(arry2D);
-
-    const arry1D = arry3D.flat(2); //2次元分、平坦化を行う
-    console.log(arry1D);
-
-    arry.reverse();
-    console.log(arry);
+    chuka.push("天津飯");
+    chuka.unshift("チャーハン");
+    chuka.shift();
+    chuka.pop();
+    chuka.splice(2, 1);
+    console.log(chuka.indexOf("餃子"));
+    chuka = chuka.slice(1, 3);
+    let concatChuka = chuka.concat(["杏仁豆腐", "ごま豆腐"]);
+    concatChuka.reverse();
+    console.log(concatChuka.includes("八宝菜"));
 </script>
