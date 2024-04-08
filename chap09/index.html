@@ -1,22 +1,26 @@
 <script>
-    const fruit1 = {
-        apple: function() {console.log("リンゴ");}
-    };
+    // 親のコンストラクタを宣言
+    function Parent() {}
+    //  子のコンストラクタを宣言    
+    function Child() {}
 
-    // fruit1が__proto__に設定された新しいオブジェクトをfruit2に代入
-    const fruit2 = Object.create(fruit1);
+    // 親のプロトタイプにメソッドを追加
+    Parent.prototype.parentMethod = function() {
+        console.log("親のメソッド");
+    }
 
-    // fruit2にbananaを追加
-    fruit2.banana = function() {console.log("バナナ");};
+    // 親のプロトタイプを継承
+    Child.prototype = Object.create(Parent.prototype);
 
-    // fruit2が__proto__に設定された新しいオブジェクトをfruit2に代入
-    const fruit3 = Object.create(fruit2);
+    // 子のプロトタイプにメソッドを追加
+    Child.prototype.childMethod = function() {
+        console.log("子のメソッド");
+    }
 
-    fruit3.melon = function() {console.log("メロン");};
+    // インスタンス化
+    const childObj = new Child;
+    childObj.parentMethod();
+    childObj.childMethod();
 
-    fruit3.apple();
-    fruit3.banana();
-    fruit3.melon();
-
-    console.log(fruit3);
+    console.log(Child.prototype)
 </script>
