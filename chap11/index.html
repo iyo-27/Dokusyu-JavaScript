@@ -1,11 +1,26 @@
 <script>
-    const set = new Set();
-    set.add(1);
-    set.add(2);
-    set.add(3);
-    console.log(Array.isArray(set));
-    const covertedArray = Array.from(set);
+    let arry = [1, 2, 3]
+    
+    // 変数x, yを宣言し、配列の要素を代入する
+    let [x, y, z] = arry;
+    console.log(x, y, z);
 
-    console.log(covertedArray);
-    console.log(Array.isArray(covertedArray));
+    // 2つ目の要素を空白にする
+    // 不要な要素は空白としておくことでスキップできる
+    let [x1, , z1] = arry;
+    console.log(x1, z1);
+
+    // 宣言済みの変数に対してもできる
+    let x2;
+    [x2] = arry;
+    console.log(x2);
+
+    // デフォルト値を設定できる
+    let [ , , , a3 = 4] = arry
+    console.log(a3);
+
+    //スプレっと演算子(...)と合わせて使うこともできる
+    let [x4, ...reset] = arry
+    console.log(x4, reset);
+
 </script>
