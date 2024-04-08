@@ -1,33 +1,9 @@
 <script>
-    // 文字列として昇順で要素を並び替える場合
-    const strArry = ["b", "c", "a"];
-    strArry.sort();
-
-    console.log(strArry);
-
-    // 比較関数を使った数値の並び替え
-    function compare(val1, val2){
-        if(val1 < val2){
-            return -1;
-        }
-        if(val1 > val2) {
-            return 1;
-        }
-        return 0;
+    function reducer(totalValue, currentValue) {
+        return totalValue + currentValue
     }
 
-    const arry = [10, 2, 7, 3, 9];
-    console.log(arry.sort(compare));
-
-    // 昇順（小さい数値から大きい数値への並び替え）
-    function ascending(a, b) {
-        return a - b;
-    }
-    console.log(arry.sort(ascending));
-
-    // 降順（大きい数値から小さい数値への並び替え）
-    function descending(a, b) {
-        return b - a;
-    }
-    console.log(arry.sort(descending));
+    const arry = [1, 2, 3, 4, 5];
+    const result = arry.reduce(reducer);
+    console.log(result);
 </script>
