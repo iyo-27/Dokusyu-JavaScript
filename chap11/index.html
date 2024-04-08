@@ -1,7 +1,14 @@
 <script>
-    const fruits = ["banana", "orange", "grape"];
-    console.log(fruits[0]);
-    fruits[1] = "apple";
+    const array2D = [
+        ["太郎", "25歳", "男"],
+        {name: "花子", age: "23歳", gender: "女"} // オブジェクトも格納できる
+    ]
 
-    console.log(fruits);
+    console.log(array2D[0]);
+    // [1階層目][2階層目]
+    console.log(array2D[0][0]);
+    console.log(array2D[0][2]);
+    console.log(array2D[1].name); // ドット記法でプロパティを取得
+    console.log(array2D[1]["age"]); // ブラケット記法でプロパティを取得
+
 </script>
