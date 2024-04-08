@@ -1,21 +1,28 @@
 <script>
-    class Counter {
-        #count = 0; // プライベートプロパティ
+    class Person {
+        #lastname = "独習";
+        #firstname;
+        #age;
 
-        // プライベートメソッド
-        #print() {
-            console.log(this.#count);
+        constructor(firstname) {
+            this.#firstname = firstname;
         }
 
-        // パブリックメソッド
-        increment(){
-            this.#count++; // 呼び出す時も#付けるんだね…
-            this.#print();
+        get fullname(){
+            return this.#lastname + this.#firstname;
+        }
+
+        set age(value) {
+            this.#age = Number(value)
+        }
+
+        get age() {
+            return this.#age;
         }
     }
 
-    const counter = new Counter;
-    counter.increment();
-
-    //counter.#count = 10; プライベートプロパティはクラス外からアクセス不可
+    const taro = new Person("太郎");
+    taro.age = 18;
+    console.log(taro.age);
+    console.log(taro.fullname);
 </script>
