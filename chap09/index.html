@@ -3,6 +3,6 @@
     Test.prototype.hello = function() { console.log("こんにちは"); }
     const instance = new Test;
 
-    console.log(instance.__proto__ === Test.prototype);
-    instance.__proto__.hello();
+    console.log(instance.__proto__.hello === Test.hello);
+    instance.hello();
 </script>
