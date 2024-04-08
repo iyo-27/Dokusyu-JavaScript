@@ -1,10 +1,15 @@
 <script>
-    function Test() {
-        //関数はオブジェクトの一種
-        Test.prop = "値";
-        console.log(Test.prop);
+    function Person(name) {
+        this.name = name;
     }
 
-    // proptotypeプロパティの存在確認
-    console.log("prototype" in Test);
+    Person.prototype.hello = function() {
+        console.log(`こんにちは${this.name}`)
+    }
+
+    const taro = new Person("独習太郎");
+    taro.hello();
+
+    const hanako = new Person("独習花子");
+    hanako.hello();
 </script>
