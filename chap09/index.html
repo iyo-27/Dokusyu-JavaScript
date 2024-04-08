@@ -1,28 +1,10 @@
 <script>
-    class Person {
-        #lastname = "独習";
-        #firstname;
-        #age;
-
-        constructor(firstname) {
-            this.#firstname = firstname;
-        }
-
-        get fullname(){
-            return this.#lastname + this.#firstname;
-        }
-
-        set age(value) {
-            this.#age = Number(value)
-        }
-
-        get age() {
-            return this.#age;
-        }
+    function Test() {
+        //関数はオブジェクトの一種
+        Test.prop = "値";
+        console.log(Test.prop);
     }
 
-    const taro = new Person("太郎");
-    taro.age = 18;
-    console.log(taro.age);
-    console.log(taro.fullname);
+    // proptotypeプロパティの存在確認
+    console.log("prototype" in Test);
 </script>
