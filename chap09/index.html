@@ -1,18 +1,16 @@
 <script>
-    class Person {
+    // ES2015のクラスで書いた場合
+    class ES2015 {
         constructor() {
-            this.name = "独習太郎";
+            this.prop = 0;
         }
-
-        hello() {
-            console.log("こんにちは")
-        } 
     }
 
-    const taro = new Person;
-
-    console.log(taro.hasOwnProperty("name"));
-    console.log("name" in taro);
-    console.log(taro.hasOwnProperty("hello"));
-    console.log("hello" in taro);
+    // E2022のクラスで書いた場合
+    class ES2022 {
+        prop = 0; // コンストラクタの引数を代入しない場合
+        constructor(arg) {
+            this.prop2 = arg; // コンストラクタの引数を代入する場合はconstructor内で行う
+        }
+    }
 </script>
