@@ -1,30 +1,8 @@
 <script>
     const fruits = ["banana", "orange", "grape"];
-    // 末尾に要素を追加
-    console.log(fruits.push("apple"));
+    const found = fruits.indexOf("grape");
+    console.log(found);
 
-    // 先頭に要素を追加
-    console.log(fruits.unshift("lemon"));
-
-    // 先頭の要素を削除
-    console.log(fruits.shift());
-
-    // 末尾の要素を削除
-    console.log(fruits.pop());
-
-    // 開始位置から特定の長さの要素を取り出し
-    // これは元の配列から削除されるため注意
-    console.log(fruits.splice(0, 2));
-
-    // 配列の結合
-    // 引数空で使用すれば、配列の複製もできる
-    const newFruits = fruits.concat(["meron", "mango"])
-    console.log(newFruits);
-    console.log(fruits); // 元の配列は変更されない
-    
-    // 特定の要素を抽出した新しい配列の作成
-    // 開始位置、終了位置を指定しなければすべて複製する
-    const newFruits2 = newFruits.slice(0, 2);
-    console.log(newFruits2);
-    console.log(newFruits);
+    const notFound = fruits.indexOf("watermelon");
+    console.log(notFound);
 </script>
