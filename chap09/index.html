@@ -1,16 +1,21 @@
 <script>
-    // ES2015のクラスで書いた場合
-    class ES2015 {
-        constructor() {
-            this.prop = 0;
+    class Counter {
+        #count = 0; // プライベートプロパティ
+
+        // プライベートメソッド
+        #print() {
+            console.log(this.#count);
+        }
+
+        // パブリックメソッド
+        increment(){
+            this.#count++; // 呼び出す時も#付けるんだね…
+            this.#print();
         }
     }
 
-    // E2022のクラスで書いた場合
-    class ES2022 {
-        prop = 0; // コンストラクタの引数を代入しない場合
-        constructor(arg) {
-            this.prop2 = arg; // コンストラクタの引数を代入する場合はconstructor内で行う
-        }
-    }
+    const counter = new Counter;
+    counter.increment();
+
+    //counter.#count = 10; プライベートプロパティはクラス外からアクセス不可
 </script>
