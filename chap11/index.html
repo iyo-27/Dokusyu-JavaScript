@@ -1,9 +1,11 @@
 <script>
-    function reducer(totalValue, currentValue) {
-        return totalValue + currentValue
-    }
+    const set = new Set();
+    set.add(1);
+    set.add(2);
+    set.add(3);
+    console.log(Array.isArray(set));
+    const covertedArray = Array.from(set);
 
-    const arry = [1, 2, 3, 4, 5];
-    const result = arry.reduce(reducer);
-    console.log(result);
+    console.log(covertedArray);
+    console.log(Array.isArray(covertedArray));
 </script>
