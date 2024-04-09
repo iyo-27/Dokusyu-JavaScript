@@ -1,25 +1,10 @@
 <script>
-    // Setの初期化
-    const fruits = new Set();
+    // Setの場合、コールバック関数の第1引数valueと第2引数someValueにはそれぞれ同じ値が渡される
+    const set = new Set(["値1", "値2"]);
+    set.forEach((value, someValue, set) => {
+        console.log(`value：[${value}, someValue：${someValue}, set：$]`, set);
+    })
 
-    // Setのメソッド
-    // add：値の追加
-    fruits.add("apple");
-    fruits.add("orange");
-    fruits.add("orange"); // 重複した値を追加
-    console.log(fruits); // 登録された値は一意になる！
-
-    // delete：コレクション内の値を削除
-    fruits.delete("orange");
-    console.log(fruits);
-
-    // clear：コレクション内のすべての値を削除
-    fruits.add("orange");
-    fruits.clear();
-    console.log(fruits);
-
-    // has：コレクション内に値が存在するか確認
-    fruits.add("apple");
-    console.log(fruits.has("apple"));
-    console.log(fruits.has("grape"));
+    // Setオブジェクトの長さ確認
+    console.log(set.size);
 </script>
