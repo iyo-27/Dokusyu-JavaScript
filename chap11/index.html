@@ -1,38 +1,25 @@
 <script>
-    // {タイトル, 優先順位, 完了か否か}
-    // 優先順位 (priority) は1：低、2：中、3：高
-    const todos = [
-        {title: "晩御飯", priority: 2, completed: false},
-        {title: "ゴミ出し", priority: 1, completed: true},
-        {title: "食材の買い出し", priority: 3, completed: false},
-        {title: "洗濯", priority: 2, completed: true},
-        {title: "録画の視聴", priority: 1, completed: false},
-    ]
+    // Setの初期化
+    const fruits = new Set();
 
-    function consoleLog(arry, msg) {
-        arry.forEach(element => {
-            console.log(element.title + msg);
-        });
-    }
+    // Setのメソッド
+    // add：値の追加
+    fruits.add("apple");
+    fruits.add("orange");
+    fruits.add("orange"); // 重複した値を追加
+    console.log(fruits); // 登録された値は一意になる！
 
-    console.log("[1]");
-    const arryCompleted = todos.filter((value, i, arry) => {
-        return value.completed === true
-    });
-    consoleLog(arryCompleted, "は完了！");
+    // delete：コレクション内の値を削除
+    fruits.delete("orange");
+    console.log(fruits);
 
-    const notCompleted = todos.filter((value, i, arry) => {
-        return value.completed === false
-    });
-    consoleLog(notCompleted, "をやらないと！");
+    // clear：コレクション内のすべての値を削除
+    fruits.add("orange");
+    fruits.clear();
+    console.log(fruits);
 
-    
-    console.log("[2]");
-    // 前の抽出が答え
-
-    console.log("[3]");
-    notCompleted.sort((a, b) => {return b.priority - a.priority});
-    console.log(notCompleted);
-    // 以下のように分割代入しても良い
-    // notCompleted.sort(({priority: priorityA}, {priority: priorityB}) => {return priorityB - priorityA});
+    // has：コレクション内に値が存在するか確認
+    fruits.add("apple");
+    console.log(fruits.has("apple"));
+    console.log(fruits.has("grape"));
 </script>
