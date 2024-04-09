@@ -1,19 +1,38 @@
 <script>
-    const fruitsArry = ["banana", "orange", "grape"];
-    const fruitsObj = {banana: "バナナ", orange: "オレンジ"};
+    // {タイトル, 優先順位, 完了か否か}
+    // 優先順位 (priority) は1：低、2：中、3：高
+    const todos = [
+        {title: "晩御飯", priority: 2, completed: false},
+        {title: "ゴミ出し", priority: 1, completed: true},
+        {title: "食材の買い出し", priority: 3, completed: false},
+        {title: "洗濯", priority: 2, completed: true},
+        {title: "録画の視聴", priority: 1, completed: false},
+    ]
 
-    // 3つ目の要素のみ関数内で使える
-    function bunkatuArry([, ,fruit3]){
-        console.log(fruit3);
+    function consoleLog(arry, msg) {
+        arry.forEach(element => {
+            console.log(element.title + msg);
+        });
     }
 
-    bunkatuArry(fruitsArry); // 配列を実引数として渡す
+    console.log("[1]");
+    const arryCompleted = todos.filter((value, i, arry) => {
+        return value.completed === true
+    });
+    consoleLog(arryCompleted, "は完了！");
 
-    // orangeのみを引数として抽出
-    function bunkatuObj({orange}) {
-        console.log(orange);
-    }
+    const notCompleted = todos.filter((value, i, arry) => {
+        return value.completed === false
+    });
+    consoleLog(notCompleted, "をやらないと！");
 
-    bunkatuObj(fruitsObj); // オブジェクトを実引数として渡す
+    
+    console.log("[2]");
+    // 前の抽出が答え
 
+    console.log("[3]");
+    notCompleted.sort((a, b) => {return b.priority - a.priority});
+    console.log(notCompleted);
+    // 以下のように分割代入しても良い
+    // notCompleted.sort(({priority: priorityA}, {priority: priorityB}) => {return priorityB - priorityA});
 </script>
