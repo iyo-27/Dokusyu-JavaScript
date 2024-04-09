@@ -1,28 +1,24 @@
 <script>
-    function rangeIterator(min, max) {
-        let value = min;
+    const iterableObject = {
+        [Symbol.iterator] () {
+            let value = 0;
 
-        return {
-            next(){
-                if(value < max){
-                    return{
-                        done: false, 
-                        value: value++
-                    }
-                } else {
-                    return {                        
-                        done: true
+            return {
+                next() {
+                    if(value > 2) {
+                        return {done: true};
+                    }else{
+                        return {
+                            done: false,
+                            value: value++
+                        };
                     }
                 }
             }
         }
-
     }
 
-    const iterator = rangeIterator(1, 5);
-    console.log(iterator.next());
-    console.log(iterator.next());
-    console.log(iterator.next());
-    console.log(iterator.next());
-    console.log(iterator.next());
+    for (const iterator of iterableObject) {
+        console.log(iterator);
+    }
 </script>
