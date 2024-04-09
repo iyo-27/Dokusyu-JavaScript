@@ -1,10 +1,9 @@
 <script>
-    // Setの場合、コールバック関数の第1引数valueと第2引数someValueにはそれぞれ同じ値が渡される
-    const set = new Set(["値1", "値2"]);
-    set.forEach((value, someValue, set) => {
-        console.log(`value：[${value}, someValue：${someValue}, set：$]`, set);
-    })
+    const map = new Map([
+        ["キー1", "値1"],
+        ["キー2", "値2"]
+    ])
 
-    // Setオブジェクトの長さ確認
-    console.log(set.size);
+    const obj = Object.fromEntries(map);
+    console.log(obj["キー1"]);
 </script>
