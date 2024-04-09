@@ -1,27 +1,19 @@
 <script>
-    // オブジェクトの分割代入はプロパティ名の変数を宣言する。プロパティの順番は関係ない
-    let {banana, orange, apple} = {apple: "リンゴ", banana: "バナナ", orange: "オレンジ"};
-    console.log(banana);
+    const fruitsArry = ["banana", "orange", "grape"];
+    const fruitsObj = {banana: "バナナ", orange: "オレンジ"};
 
-    // プロパティ名と変数名を変えたい場合
-    let {banana: b, apple: a} = {apple: "リンゴ", banana: "バナナ"};
-    console.log(b, a);
+    // 3つ目の要素のみ関数内で使える
+    function bunkatuArry([, ,fruit3]){
+        console.log(fruit3);
+    }
 
-    // デフォルト値を設定する場合
-    let {banana: b2 = "おいしいバナナ"} = {apple: "リンゴ"};
-    console.log(b2, apple);
+    bunkatuArry(fruitsArry); // 配列を実引数として渡す
 
-    // スプレット演算子と合わせて活用
-    let {banana: b3, ...fruits} = {apple: "リンゴ", banana: "バナナ", orange: "オレンジ"};
-    console.log(b3, fruits);
+    // orangeのみを引数として抽出
+    function bunkatuObj({orange}) {
+        console.log(orange);
+    }
 
-    // 多階層のオブジェクトも展開できる
-    let {fruits: {apple: a3}} = {fruits: {apple: "リンゴ", banana: "バナナ"}};
-    console.log(a3);
-
-    // 動的にプロパティ名を指定できる
-    let prop = "apple";
-    let {[prop]: a4} = {apple: "リンゴ", banana: "バナナ", orange: "オレンジ"};
-    console.log(a4);
+    bunkatuObj(fruitsObj); // オブジェクトを実引数として渡す
 
 </script>
