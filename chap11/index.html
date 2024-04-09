@@ -1,21 +1,62 @@
 <script>
-    // [商品名, 価格]
-    const menu = new Map([
-        ["天津飯", 1000],
-        ["八宝菜", 500],
-        ["ゴマ団子", 200]
-    ]);
+    // [1]
+    // [商品名, 個数, 価格]
+    const order = [
+        ["八宝菜", 1, 600],
+        ["餃子", 4, 200],
+        ["回鍋肉", 1, 500],
+        ["青椒肉絲", 2, 700]
+    ];
 
-    console.log("[1]");
-    menu.set("杏仁豆腐", 300);
-    
-    console.log("[2]");
-    console.log(menu.get("天津飯"));
-    
-    console.log("[3]");
-    console.log(menu.has("ゴマ団子"));
-    
-    console.log("[4]");
-    menu.delete("八宝菜")
-    console.log(menu);
+    console.log(order.splice(2, 1));
+    console.log(order.every(([, ,price], i, arr) => { return price < 1000 })); 
+    console.log(order.sort(([, , a], [, , b]) => {return b - a;}));
+
+    console.log(order.forEach(([title, num, price]) => {
+        return console.log(`${title}を${price}で${num}個注文しました。`);
+    }));
+
+    console.log("合計金額は" + order.reduce((total, current, i, arr) => {
+        return total + current[2] * current[1];
+    }, 0) + "です");
+
+
+    // [2]
+    class Person {
+        constructor(fullname, age, gender){
+            this.fullname = fullname;
+            this.age = age;
+            this.gender = gender;
+        }
+    }
+
+    // 登場人物
+    const taro = new Person("太郎", 18, "男");
+    const jiro = new Person("次郎", 15, "男");
+    const subro = new Person("三郎", 10, "男");
+    const hanako = new Person("花子", 23, "女");
+    const hanayo = new Person("花代", 18, "女");
+
+    // 友達（friends）オブジェクト
+    const friends = new Map;
+
+    friends.set("taro", new Set([jiro, hanayo]));
+    friends.set("hanako", new Set([hanayo, taro, subro]));
+
+    let taroFriends = friends.get("taro");
+    console.log(taroFriends);
+    taroFriends.add(hanako);
+
+    let arryTaroFriends = Array.from(taroFriends);
+    arryTaroFriends.sort((a, b) => {return a.age - b.age});
+    console.log(arryTaroFriends);
+
+    let msg = "私の名前は太郎です。友達には"
+    for(value of arryTaroFriends){
+        msg += `["${value.fullname}"]`
+        
+    }
+    console.log(msg + "がいます。");
+
+
 </script>
