@@ -1,26 +1,6 @@
 <script>
-    const html = `<h1>見出し1</h1>
-    <h2>見出し2</h2>
-    <h3>見出し3</h3>
-    <header>ヘッダー</header>
-    `
-
-    function* sectionTag(htmlMsg) {
-        const regex = /<(h[1-6])>(.+)<\/\1>/g;
-        const sectionTagstr = htmlMsg.match(regex);
-
-        for(section in sectionTagstr){
-            yield sectionTagstr[section];
-        }
-    }
-
-    const iterator = sectionTag(html);
-    // console.log(iterator.next());
-    // console.log(iterator.next());
-    // console.log(iterator.next());
-    // console.log(iterator.next());
-
-    for (const section of iterator) {
-        console.log(section);
-    }
+    // 関数実行時のスプレット演算子の利用
+    const numArray = [10, 5, 18, 9];
+    const maxValue = Math.max(...numArray);
+    console.log(maxValue);
 </script>
