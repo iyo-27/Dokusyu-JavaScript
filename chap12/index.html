@@ -1,13 +1,13 @@
 <script>
-    const chuka = ["回鍋肉", "青椒肉絲", "餃子"];
-    const desert = ["杏仁豆腐", "ゴマ団子"];
+    const obj1 = {prop1: 10, prop2: 20};
+    const obj2 = {prop3: 30, prop4: 40};
 
-    const copyChuka = [...chuka];
-    console.log(copyChuka);
+    console.log({...obj1, ...obj2});
+    console.log({prop0: 0, ...obj2, prop5: 50});
+    console.log({prop1: 0, ...obj1});
 
-    const mergeChukaDesert = [...chuka, ...desert];
-    console.log(mergeChukaDesert);
 
-    const addTantanmen = [...chuka, "担々麵", ...desert];
-    console.log(addTantanmen);
+    // 関数の引数実行時の引数を、オブジェクトとスプレット演算子を使って書くことはできない！！！
+    // const obj = {prop5: 10, prop6: 20};
+    // Math.max(...obj);
 </script>
