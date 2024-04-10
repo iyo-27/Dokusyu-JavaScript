@@ -1,33 +1,16 @@
 <script>
-    // イテレーター
-    function doubleIterator() {
-        let index = 0;
-        let arry = this;
-
-        return {
-            next () {
-                if(index < arry.length){
-                    return{
-                        done: false,
-                        value: arry[index++] *2
-                    } 
-                } else {
-                    return {
-                        done: true
-                    }
-                }
-            }
-        }
+    // 数値の1～3を取得するジェネレーター
+    function* gen1to3() {
+        let index = 1;
+        yield index;
+        index++;
+        yield index;
+        index++;
+        return index;
     }
 
-    // イテレーター登録前の確認
-    for (let item of [1, 2, 3]) {
-        console.log(item);
-    }
-
-    // 既存のイテレーターを上書き
-    Array.prototype[Symbol.iterator] = doubleIterator;
-    for (const item of [1, 2, 3]) {
-        console.log(item);
-    }
+    const generator = gen1to3();
+    console.log(generator.next());
+    console.log(generator.next());
+    console.log(generator.next());
 </script>
