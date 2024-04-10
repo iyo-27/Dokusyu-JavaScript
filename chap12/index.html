@@ -1,24 +1,26 @@
 <script>
-    class Iterable {
-        *[Symbol.iterator] () {
-            for (const key in this) {
-                yield [key, this[key]]
-            }
+    const html = `<h1>見出し1</h1>
+    <h2>見出し2</h2>
+    <h3>見出し3</h3>
+    <header>ヘッダー</header>
+    `
+
+    function* sectionTag(htmlMsg) {
+        const regex = /<(h[1-6])>(.+)<\/\1>/g;
+        const sectionTagstr = htmlMsg.match(regex);
+
+        for(section in sectionTagstr){
+            yield sectionTagstr[section];
         }
     }
 
-    class Person extends Iterable {
-        constructor (name, age, gender) {
-            super();
-            this.name = name;
-            this.age = age;
-            this.gender = gender;
-        }
+    const iterator = sectionTag(html);
+    // console.log(iterator.next());
+    // console.log(iterator.next());
+    // console.log(iterator.next());
+    // console.log(iterator.next());
+
+    for (const section of iterator) {
+        console.log(section);
     }
-
-    const taro = new Person("太郎", 18, "男");
-
-    for(const row of taro) {
-        console.log(row[0], row[1]);
-    } 
 </script>
