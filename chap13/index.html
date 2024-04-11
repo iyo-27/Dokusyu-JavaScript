@@ -15,9 +15,11 @@
         }, 1000);
     })
 
-    Promise.any([myReject, myResolve])
-        .then(value => console.log(value))
-        .catch(value => console.error(value));
-    
+    Promise.allSettled([myReject, myResolve])
+        .then(arry => {
+            for(const {status, value, reason} of arry){
+                console.log(`ステータス：[${status}], 値：[${value}], エラー：[${reason}]]`);
+            }
+        })
 
 </script>
