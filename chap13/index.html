@@ -1,12 +1,12 @@
 <script>
-    const prom = new Promise(resolve => {
-        setTimeout(() => resolve("この値を取り出します"), 1000);
-    });
-
-    async function asyncFunction() {
-        const value = await prom;
-        console.log(value);
+    // Promise内でrejectが発生した場合、awaitは例外を発生させるためキャッチ！！！！
+    async function throwError() {
+        try {
+            await Promise.reject("Promiseが失敗しました。");
+        } catch (e) {
+            console.log(e);
+        }
     }
 
-    asyncFunction();
+    throwError();
 </script>
