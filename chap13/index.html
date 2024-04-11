@@ -1,25 +1,12 @@
 <script>
-    // resolve()を1000ミリ秒後に実行するPromiseインスタンス
-    const myResolve = new Promise(resolve => {
-        setTimeout(() => {
-            resolve("resolveが呼ばれました");
-            console.log("myResolveの実行が終了しました。")
-        }, 2000);
+    let val = 0;
+
+    // 非同期処理のためグローバルテキストの後に実行される
+    Promise.resolve().then(() => {
+        console.log(`valの値は[${val}]です`);
     })
 
-    // reject()を1000ミリ秒後に実行するPromiseインスタンス
-    const myReject = new Promise((_, reject) => {
-        setTimeout(() => {
-            reject("rejectが呼ばれました");
-            console.log("myRejectの実行が終了しました。")
-        }, 1000);
-    })
-
-    Promise.allSettled([myReject, myResolve])
-        .then(arry => {
-            for(const {status, value, reason} of arry){
-                console.log(`ステータス：[${status}], 値：[${value}], エラー：[${reason}]]`);
-            }
-        })
-
+    val = 1;
+    
+    console.log("グローバルコンテキスト終了");
 </script>
