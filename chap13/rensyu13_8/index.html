@@ -1,0 +1,11 @@
+<script>
+    async function myFetch() {
+        let response = await fetch("daily.json");
+        let data = await response.json();
+        for (const {word} of data) {
+            console.log(word);
+        }
+    }
+
+    myFetch();
+</script>
