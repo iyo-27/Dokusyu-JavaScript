@@ -1,7 +1,12 @@
 <script>
+    const prom = new Promise(resolve => {
+        setTimeout(() => resolve("この値を取り出します"), 1000);
+    });
+
     async function asyncFunction() {
-        return "hello";
+        const value = await prom;
+        console.log(value);
     }
 
-    asyncFunction().then((returnVal) => {console.log(returnVal)});
+    asyncFunction();
 </script>
