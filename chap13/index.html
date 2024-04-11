@@ -1,12 +1,7 @@
 <script>
-    let val = 0;
-
-    // 非同期処理のためグローバルテキストの後に実行される
-    Promise.resolve().then(() => {
-        console.log(`valの値は[${val}]です`);
+    Promise.reject("エラーの理由").catch((err) => {
+        console.error(err);
     })
-
-    val = 1;
     
     console.log("グローバルコンテキスト終了");
 </script>
