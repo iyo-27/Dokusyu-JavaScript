@@ -1,19 +1,16 @@
-<!DOCTYPE html>
-<body>
-    <button>ボタン</button>
-    <script>
-        function sleep(ms) {
-            setTimeout(() => alert("sleep関数が完了しました"), ms);            
-        }
+<script>
+    let val = -1;
 
-        sleep(5000);
+    function timer(callback) {
+        setTimeout(function task() {
+            val = Math.floor(Math.random() * 11);
+            callback(val);
+        }, 1000)
+    }
 
-        // ボタンにクリック時の処理を実装
-        const btn = document.querySelector("button");
-        
-        function clickHandler() {
-            alert("ボタンがクリックされました");
-        }
-        btn.addEventListener("click", clickHandler);
-    </script>
-</body>
+    function operations(val) {
+        console.log(val);
+    }
+
+    timer(operations);
+</script>
