@@ -1,16 +1,21 @@
 <script>
-    let promResolve, promReject;
+    function wait(ms) {
+        return new Promise((resolve, reject) => {
+            setTimeout(() => {
+                console.log(`${ms}msの処理が完了しました`);
+                resolve(ms);
+            }, ms);
+        });
+    }
 
-    const prom = new Promise((resolve, reject) => {
-        promResolve = resolve;
-        promReject = reject;
-    });
+    const wait400 = wait(400);
+    const wait500 = wait(500);
+    const wait600 = wait(600);
 
-    console.log(prom);
-
-    // 下を実行すると状態がfulfilledに変わる
-    //promResolve("引数");
-    //console.log(prom);
-    
+    Promise.all([wait500, wait600, wait400])
+        .then(([resolve500, resolve600, resolve400]) => {
+            console.log("全てのPromiseが完了しました");
+            console.log(resolve500, resolve600, resolve400);
+        })
 
 </script>
