@@ -1,16 +1,26 @@
 <script>
-    function delay(fn, message, ms) {
-        setTimeout(function(){
-            fn(message);
-        }, ms);
-    }
+    let instance = new Promise((resolve, reject) => {
+        // 1秒後に実行
+        setTimeout(() => {
+            // 0～10のランダムな値を取得
+            const rand = Math.floor(Math.random() * 11);
+            if(rand < 5) {
+                reject(rand);
+            } else {
+                resolve(rand);
+            }
+        }, 2000);
+    });
 
-    delay(console.log, "こんにちは", 1000);
-    delay(alert, "さようなら", 1000);
-    delay(function(message) {
+    instance = instance.then(value => {
+        console.log(`5以上の値[${value}]が渡ってきました。`);
+    });
 
-        console.log(message);
-        delay(console.log, "さらに" + message, 1000);
+    instance = instance.catch(errorValue => {
+        console.error(`5未満の値[${errorValue}]が渡ってきたため、エラー表示`);
+    });
 
-    }, "1秒経ちました", 1000);
+    instance = instance.finally(() => {
+        console.log("処理を終了します");
+    })
 </script>
