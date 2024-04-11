@@ -1,26 +1,16 @@
 <script>
     let instance = new Promise((resolve, reject) => {
-        // 1秒後に実行
         setTimeout(() => {
-            // 0～10のランダムな値を取得
-            const rand = Math.floor(Math.random() * 11);
-            if(rand < 5) {
-                reject(rand);
-            } else {
-                resolve(rand);
+            const ms = new Date().getSeconds();
+            if(ms % 2 === 0){
+                resolve(`${ms}は偶数のため、成功とします`);
+            }else{
+                reject(`${ms}は奇数のため、成功とします`);
             }
-        }, 2000);
-    });
+        }, 1000)
 
-    instance = instance.then(value => {
-        console.log(`5以上の値[${value}]が渡ってきました。`);
-    });
-
-    instance = instance.catch(errorValue => {
-        console.error(`5未満の値[${errorValue}]が渡ってきたため、エラー表示`);
-    });
-
-    instance = instance.finally(() => {
-        console.log("処理を終了します");
     })
+    .then(value => console.log(value))
+    .catch(value => console.error(value))
+    .finally(() => console.log("処理を終了します")); 
 </script>
