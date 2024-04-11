@@ -1,34 +1,22 @@
 <script>
-    function promiseFactory(count) {
+    // 行動をログに出力
+    function action(actionName, duration) {
         return new Promise((resolve, reject) => {
             setTimeout(() => {
-                count++;
-                console.log(`${count}回目のコールです時刻：[${new Date().toTimeString()}]`);
-
-                if(count === 3) {
-                    reject(count);
-                } else {
-                    resolve(count);
-                }
-            }, 1000)
+                console.log(`${actionName}`);
+                resolve();
+            }, duration)
         });
     }
 
-    // await/async を使った書き換え
-    async function execute() {
-        try{
-            // promiseFactory内のresolveが呼び出されるまで次の処理を実行しない
-            let count = await promiseFactory(0);
-            count = await promiseFactory(count);
-            count = await promiseFactory(count);
-            count = await promiseFactory(count);
-
-        } catch(e) {
-            console.error(`エラーに飛びました。現在のカウントは${e}です`);
-        } finally {
-            console.log("処理を終了します")
-        }
+    // 1日の行動
+    async function makeAction() {
+        await action("散歩", 500);
+        await action("朝食", 200);
+        await Promise.all([action("昼食", 500), action("おしゃべり", 100)]);
+        await action("夕食", 600);
+        await action("趣味", 400);
     }
 
-    execute(); // executeの実行
+    makeAction();
 </script>
