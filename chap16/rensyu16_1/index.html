@@ -1,0 +1,10 @@
+<script type="module">
+    // 静的インポート
+    import defalutExport, * as moduleObject from "./export.js";
+
+    // 動的インポート
+    const test = import("./export.js");
+
+    console.log(moduleObject);
+    console.log(test);
+</script>
