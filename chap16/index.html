@@ -1,14 +1,5 @@
 <script type="module">
-    // 無名関数をデフォルトエクスポート
-    export default function() {}
-
-    // アロー関数をデフォルトエクスポート
-    // export default () => {}
-
-    // 名前を付けても、importの際には任意の名前を使うことが可能
-    export default function exportedFunction() {}
-
-    // defaultと名前付けすると、デフォルトエクスポートとしてエクスポートされる
-    function normalFunction() {}
-    export {normalFunction as default}
+    // 読み込み先のモジュールのトップレベルコードは初回読み込み時のみ実行される
+    import "./module.js";
+    import "./module.js";
 </script>

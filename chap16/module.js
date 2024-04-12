@@ -1,0 +1,1 @@
+console.log("module.jsのトップレベルコードが読み込まれました");
