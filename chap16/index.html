@@ -7,4 +7,8 @@
 
     // 名前を付けても、importの際には任意の名前を使うことが可能
     export default function exportedFunction() {}
+
+    // defaultと名前付けすると、デフォルトエクスポートとしてエクスポートされる
+    function normalFunction() {}
+    export {normalFunction as default}
 </script>
